@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="logo">T</div>
+            <div>
+                <h2>Ticket Studio</h2>
+                <small>COMPONENTS V2 BUILDER</small>
+            </div>
+        </div>
+
+        <p class="section-label">WORKSPACE</p>
+        <button class="nav active">▦ Panel Builder</button>
+        <button class="nav">🎫 My Panels</button>
+        <button class="nav">⚙ Settings</button>
+
+        <p class="section-label">COMPONENTS</p>
+        <button class="component" data-add="text">＋ Text Display</button>
+        <button class="component" data-add="container">＋ Container</button>
+        <button class="component" data-add="dropdown">＋ Dropdown Menu</button>
+        <button class="component" data-add="button">＋ Button</button>
+        <button class="component" data-add="separator">＋ Separator</button>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <p class="eyebrow">DISCORD / TICKETS</p>
+                <h1>Panel Builder</h1>
+                <p>Build your own Discord ticket panels.</p>
+            </div>
+
+            <div class="actions">
+                <button id="reset">Reset</button>
+                <button id="export" class="primary">Export JSON ↗</button>
+            </div>
+        </header>
+
+        <div class="workspace">
+
+            <section class="editor">
+                <div class="section-heading">
+                    <h3>Live Preview</h3>
+                    <span>COMPONENTS V2</span>
+                </div>
+
+                <div id="canvas"></div>
+            </section>
+
+            <aside class="properties">
+                <h3>Component Properties</h3>
+                <div id="properties">
+                    <p>Select a component to edit it.</p>
+                </div>
+            </aside>
+
+        </div>
+
+        <footer>
+            Ticket Studio · Custom Discord Ticket System
+        </footer>
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
