@@ -1,0 +1,275 @@
+
+:root {
+    --bg: #0b0c12;
+    --panel: #12141d;
+    --panel2: #1b1e2b;
+    --border: #292d3c;
+    --text: #f4f4fa;
+    --muted: #9298aa;
+    --accent: #806dff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, Arial, sans-serif;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    color: inherit;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 245px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: #0e1018;
+    border-right: 1px solid var(--border);
+    padding: 22px 16px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.brand h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.brand small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.logo {
+    background: var(--accent);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.section-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-top: 25px;
+}
+
+.nav, .component {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    margin: 4px 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+}
+
+.nav:hover, .component:hover {
+    background: var(--panel2);
+}
+
+.nav.active {
+    background: #292445;
+    color: white;
+}
+
+main {
+    padding: 35px;
+    min-width: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    margin: 8px 0;
+    font-size: 30px;
+}
+
+header p, .eyebrow {
+    color: var(--muted);
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    padding: 11px 16px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.actions .primary {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 18px;
+}
+
+.editor, .properties {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.section-heading {
+    padding: 17px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-heading span {
+    color: #a99fff;
+    font-size: 10px;
+}
+
+#canvas {
+    padding: 25px;
+    min-height: 450px;
+}
+
+.discord-preview {
+    background: #242631;
+    border-radius: 10px;
+    padding: 18px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.component-preview {
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px dashed transparent;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.component-preview:hover,
+.component-preview.selected {
+    border-color: var(--accent);
+    background: #806dff12;
+}
+
+.component-preview small {
+    display: block;
+    color: #aaa2ff;
+    margin-bottom: 8px;
+}
+
+.fake-dropdown {
+    padding: 12px;
+    background: #343743;
+    border: 1px solid #4a4e5c;
+    border-radius: 7px;
+}
+
+.fake-button {
+    background: #5865f2;
+    padding: 10px 16px;
+    display: inline-block;
+    border-radius: 7px;
+}
+
+.properties {
+    padding: 18px;
+}
+
+.properties h3 {
+    margin-top: 0;
+}
+
+#properties label {
+    display: block;
+    margin: 15px 0 6px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#properties input,
+#properties textarea {
+    width: 100%;
+    background: #0c0e15;
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 7px;
+    color: white;
+}
+
+#properties textarea {
+    min-height: 70px;
+}
+
+#properties button {
+    padding: 9px 12px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    margin-top: 10px;
+}
+
+footer {
+    color: var(--muted);
+    padding: 25px 0;
+    font-size: 11px;
+}
+
+@media(max-width: 850px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    main {
+        padding: 18px;
+    }
+}
